@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron" style="padding-top: 100px">
+    <h1>Python Send Email Demo</h1>
+    <br>
+    {% if user.is_authenticated %}
+        <h4>Welcome {{ user.name }}!</h4>
+        <p>Use the navigation bar at the top of the page to get started.</p>
+    {% else %}
+        <a href="{% url 'signin' %}" class="btn btn-primary btn-large">Click here to sign in</a>
+    {% endif %}
+</div>
+{% endblock %}
